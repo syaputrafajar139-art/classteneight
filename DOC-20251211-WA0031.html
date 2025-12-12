@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE.XEIGHT DYNAMOSS - Kelas X-8 SMA Negeri Jogoroto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
+    <style>
+        :root {
+            --primary: #121212;
+            --secondary: #FF3B30;
+            --accent: #FFD700;
+            --light: #1E1E1E;
+            --text: #FFFFFF;
+            --text-secondary: #B0B0B0;
+            --dynamo-red: #FF3B30;
+            --dynamo-yellow: #FFD700;
+            --dynamo-black: #000000;
+            --dynamo-gray: #1A1A1A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 59, 48, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 215, 0, 0.05) 0%, transparent 20%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header dengan tema dynamoss */
+        header {
+            background: linear-gradient(135deg, var(--dynamo-black) 0%, var(--dynamo-gray) 100%);
+            padding: 40px 0 30px;
+            text-align: center;
+            position: relative;
+            border-bottom: 3px solid var(--dynamo-red);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--dynamo-red), var(--dynamo-yellow), var(--dynamo-red));
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--dynamo-red), var(--dynamo-yellow));
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 800;
+            font-size: 2rem;
+            color: var(--dynamo-black);
+            margin-right: 20px;
+            box-shadow: 0 0 20px rgba(255, 59, 48, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo::after {
+            content: 'X8';
+            position: absolute;
+        }
+
+        .logo:hover {
+            transform: rotate(15deg);
+            transition: transform 0.3s ease;
+        }
+
+        .header-text {
+            text-align: left;
+        }
+
+        .school-name {
+            font-size: 1.3rem;
+            color: var(--dynamo-yellow);
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .class-name {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--dynamo-red), var(--dynamo-yellow));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .instagram-handle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .instagram-handle a {
+            color: var(--dynamo-yellow);
+            text-decoration: none;
+            margin-left: 8px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .instagram-handle a:hover {
+            color: var(--dynamo-red);
+        }
+
+        .instagram-handle i {
+            margin-right: 5px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--dynamo-red);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 8px 16px;
+            border-radius: 30px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 59, 48, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .nav-links a:hover::before {
+            left: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--dynamo-yellow);
+            background-color: rgba(255, 59, 48, 0.1);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--dynamo-red), var(--dynamo-yellow));
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .about-card {
+            background: linear-gradient(145deg, rgba(30, 30, 30, 0.9), rgba(26, 26, 26, 0.9));
+            border-radius: 15px;
+            padding: 30px;
+            width: 100%;
+            max-width: 350px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-left: 5px solid var(--dynamo-red);
+            transition: transform 0.3s;
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .about-card h3 {
+            color: var(--dynamo-yellow);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .about-card h3 i {
+            margin-right: 10px;
+            color: var(--dynamo-red);
+        }
+
+        .about-card p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Student Stats */
+        .student-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .stat-card {
+            background: linear-gradient(145deg, rgba(30, 30, 30, 0.9), rgba(26, 26, 26, 0.9));
+            border-radius: 15px;
+            padding: 25px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-top: 5px solid var(--dynamo-red);
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            border-top-color: var(--dynamo-yellow);
+            transform: scale(1.05);
+        }
+
+        .stat-card i {
+            font-size: 2.5rem;
+            color: var(--dynamo-yellow);
+            margin-bottom: 15px;
+        }
+
+        .stat-card .number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--dynamo-red);
+            margin-bottom: 5px;
+        }
+
+        .stat-card .label {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* Class Structure */
+        .structure-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .structure-card {
+            background: linear-gradient(145deg, rgba(30, 30, 30, 0.9), rgba(26, 26, 26, 0.9));
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-left: 5px solid var(--dynamo-yellow);
+            transition: transform 0.3s;
+        }
+
+        .structure-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .structure-card h3 {
+            color: var(--dynamo-yellow);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .structure-card h3 i {
+            margin-right: 10px;
+            color: var(--dynamo-red);
+        }
+
+        .structure-card p {
+            color: var(--text);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        /* Schedule */
+        .schedule-container {
+            overflow-x: auto;
+            margin-top: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: rgba(30, 30, 30, 0.9);
+        }
+
+        .schedule-table th {
+            background: linear-gradient(to right, var(--dynamo-red), var(--dynamo-black));
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .schedule-table td {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text);
+        }
+
+        .schedule-table tr:nth-child(even) {
+            background-color: rgba(255, 59, 48, 0.05);
+        }
+
+        .schedule-table tr:hover {
+            background-color: rgba(255, 215, 0, 0.1);
+        }
+
+        /* Students */
+        .students-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .student-card {
+            background: linear-gradient(145deg, rgba(30, 30, 30, 0.9), rgba(26, 26, 26, 0.9));
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+            border-top: 4px solid var(--dynamo-red);
+        }
+
+        .student-card:hover {
+            transform: translateY(-10px);
+            border-top-color: var(--dynamo-yellow);
+        }
+
+        .student-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            background: linear-gradient(135deg, var(--dynamo-red), var(--dynamo-yellow));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--dynamo-black);
+            font-weight: 700;
+            overflow: hidden;
+        }
+
+        .student-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .student-name {
+            color: var(--text);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .student-gender {
+            color: var(--dynamo-yellow);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Memories */
+        .memories-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .memory-card {
+            background: linear-gradient(145deg, rgba(30, 30, 30, 0.9), rgba(26, 26, 26, 0.9));
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .memory-img {
+            height: 200px;
+            background: linear-gradient(135deg, var(--dynamo-red), var(--dynamo-yellow));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--dynamo-black);
+        }
+
+        .memory-content {
+            padding: 20px;
+        }
+
+        .memory-content h3 {
+            color: var(--dynamo-yellow);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .memory-content p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dynamo-black) 0%, var(--dynamo-gray) 100%);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 3px solid var(--dynamo-red);
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .dynamoss-text {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--dynamo-red), var(--dynamo-yellow));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .footer-quote {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .class-name {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .students-container {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+
+            .memory-card {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo"></div>
+                <div class="header-text">
+                    <div class="school-name">SMA NEGERI JOGOROTO</div>
+                    <h1 class="class-name">X-8 DYNAMOSS</h1>
+                    <div class="class-info">
+                        <p>Tahun Pelajaran: <strong>2025/2026</strong></p>
+                        <p>Wali Kelas: <strong>DIAN AYU</strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="instagram-handle">
+                <i class="fab fa-instagram"></i>
+                <a href="https://instagram.com/the.xeight_dynamoss" target="_blank">@the.xeight_dynamoss</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="#about"><i class="fas fa-info-circle"></i> Tentang Kelas</a></li>
+                <li><a href="#structure"><i class="fas fa-sitemap"></i> Struktur Kelas</a></li>
+                <li><a href="#students"><i class="fas fa-users"></i> Siswa</a></li>
+                <li><a href="#schedule"><i class="fas fa-calendar-alt"></i> Jadwal</a></li>
+                <li><a href="#memories"><i class="fas fa-images"></i> Kenangan</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- About Section -->
+        <section id="about">
+            <h2 class="section-title">TENTANG KELAS X-8</h2>
+            <div class="about-content">
+                <div class="about-card">
+                    <h3><i class="fas fa-school"></i> Profil Kelas</h3>
+                    <p>Kelas X-8 Dynamoss adalah bagian dari SMA Negeri Jogoroto dengan semangat belajar tinggi dan solidaritas yang kuat. Kami adalah kelas dengan 34 anggota yang siap menghadapi tantangan pembelajaran tahun 2025/2026.</p>
+                </div>
+                <div class="about-card">
+                    <h3><i class="fas fa-user-graduate"></i> Wali Kelas</h3>
+                    <p>Bu <strong>Dian Ayu S.Pd</strong> merupakan wali kelas X-8 yang berdedikasi tinggi dalam mendidik dan membimbing siswa-siswi Dynamoss menuju prestasi terbaik.</p>
+                </div>
+                <div class="about-card">
+                    <h3><i class="fas fa-bullseye"></i> Visi Kelas</h3>
+                    <p>Menjadi kelas unggulan dengan prestasi akademik dan non-akademik yang membanggakan, serta menjunjung tinggi nilai kekeluargaan dan solidaritas.</p>
+                </div>
+            </div>
+
+            <!-- Student Stats -->
+            <div class="student-stats">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <div class="number">34</div>
+                    <div class="label">Total Siswa</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-male"></i>
+                    <div class="number">11</div>
+                    <div class="label">Siswa Laki-laki</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-female"></i>
+                    <div class="number">23</div>
+                    <div class="label">Siswi Perempuan</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Class Structure -->
+        <section id="structure">
+            <h2 class="section-title">STRUKTUR KELAS X-8</h2>
+            <div class="structure-container">
+                <div class="structure-card">
+                    <h3><i class="fas fa-chalkboard-teacher"></i> Wali Kelas</h3>
+                    <p><strong>Dian Ayu S.Pd</strong></p>
+                </div>
+                <div class="structure-card">
+                    <h3><i class="fas fa-crown"></i> Ketua & Wakil</h3>
+                    <p><strong>Ketua:</strong> Achmad Safiudin</p>
+                    <p><strong>Wakil:</strong> Vanessa Putri Andika</p>
+                </div>
+                <div class="structure-card">
+                    <h3><i class="fas fa-coins"></i> Bendahara</h3>
+                    <p><strong>Bendahara 1:</strong> Vania Prima Andinil</p><p><strong>Bendahara 2:</strong>Evi Jayanti</p>
+                </div>
+                <div class="structure-card">
+                    <h3><i class="fas fa-file-alt"></i> Sekretaris</h3>
+                    <p><strong>Sekretaris 1:</strong> Lintang Endang Ayu</p>
+                    <p><strong>Sekretaris 2:</strong> Pratama Nurwahyu Kurniawan</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Students -->
+        <section id="students">
+            <h2 class="section-title">ANGGOTA KELAS X-8</h2>
+            <div class="students-container">
+                <!-- Male Students (11) -->
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="Abdullah Khairil Azzam">Abdullah Khairil Azzam</div>
+                    <div class="student-gender">Laki-laki</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="Achmad Alvino Dinova">Achmad Alvimo Dinova</div>
+                    <div class="student-gender">Laki-laki</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="Achmad ">Achmad Safiudin</div>
+                    <div class="student-gender">Laki-laki</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="Agustina Rahayu">Agustina Rahayu</div>
+                    <div class="student-gender">Perempuan</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="Annisa Aulianingtyas Saputri">Annisa Aulianingtyas Saputri</div>
+                    <div class="student-gender">Perempuan</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="Aqilah Yusriyyah Na Ifah Azzahra">Aqilah Yusriyyah Na Ifah Azzahra</div>
+                    <div class="student-gender">Perempuan</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="Aulia Dwi Farizky">Aulia Dwi Farizky</div>
+                    <div class="student-gender">Perempuan</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="Aura Kusuma Reza Putri">Aura Kusuma Reza Putri</div>
+                    <div class="student-gender">Perempuan</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="Ayatun Najwa">Ayatun Najwa</div>
+                    <div class="student-gender">Perempuan</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="student-name">Devina Zaskia Maharani</div>
+                    <div class="student-gender">Perempuan</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="student-name">Evi Jayanti</div>
+                    <div class="student-gender">Perempuan</div>
+                </div>
+                
+                <!-- Female Students (23) -->
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="student-name">Fahrany Salsabila Putri</div>
+                    <div class="student-gender">Perempuan</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="student-name">Fatiha Ulya Rahma</div>
+                    <div class="student-gender">Perempuan</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="student-name">Faza Artika Octavia</div>
+                    <div class="student-gender">Perempuan</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="student-name">Imroatus Solikah</div>
+                    <div class="student-gender">Perempuan</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="student-name">Lintang Endang Ayu</div>
+                    <div class="student-gender">Perempuan</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="student-name">M Faisal Adam</div>
+                    <div class="student-gender">Laki-laki</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="student-name">M Ilham Imam Maulana</div>
+                    <div class="student-gender">Laki-laki</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="student-name">Mohammad Joshua Andhika</div>
+                    <div class="student-gender">Laki-laki</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="student-name">Muhammad Fahrihatna Dzakhilulla</div>
+                    <div class="student-gender">Laki-laki</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="student-name">Muhammad Fajar Syaputra</div>
+                    <div class="student-gender">Laki-laki</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="student-name">Muhammad Rasyid Octoralahamu</div>
+                    <div class="student-gender">Laki-laki</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="student-name">Pratama Nurwahyu Kurniawan</div>
+                    <div class="student-gender">Laki-laki</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="student-name">Rahmat Rafa Alfareza</div>
+                    <div class="student-gender">Laki-laki</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="student-name">Reva Calista Ramadhani</div>
+                    <div class="student-gender">Perempuan</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="student-name">Risma Aprilia Legina Putri</div>
+                    <div class="student-gender">Perempuan</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="student-name">Sely Amelia</div>
+                    <div class="student-gender">Perempuan</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="student-name">Shinta Novi Aprilia</div>
+                    <div class="student-gender">Perempuan</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="student-name">Syafa Octavia Putri</div>
+                    <div class="student-gender">Perempuan</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="student-name">Syifa Eka Safitri</div>
+                    <div class="student-gender">Perempuan</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="student-name">Tika Windi Artika Putri</div>
+                    <div class="student-gender">Perempuan</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="student-name">Vanessa Putri Andika</div>
+                    <div class="student-gender">Perempuan</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="student-name">Vania Prima Andini</div>
+                    <div class="student-gender">Perempuan</div>
+                </div>
+                <div class="student-card">
+                    <div class="student-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="student-name">Zabrina Dewi Dira Nuaima</div>
+                    <div class="student-gender">Perempuan</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schedule -->
+        <section id="schedule">
+            <h2 class="section-title">JADWAL KELAS X-8</h2>
+            <div class="schedule-container">
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>HARI</th>
+                            <th>PELAJARAN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>SENIN</td>
+                            <td>Sosiologi, B. Indonesia, Fisika, Informatika, SBK</td>
+                        </tr>
+                        <tr>
+                            <td>SELASA</td>
+                            <td>B. Inggris, SNBT, Ekonomi, Kimia, Biologi, Matematika</td>
+                        </tr>
+                        <tr>
+                            <td>RABU</td>
+                            <td>Ekonomi, Bahasa Jawa, PAI, B. Indonesia, Fisika</td>
+                        </tr>
+                        <tr>
+                            <td>KAMIS</td>
+                            <td>Geografi, BK, Penjas, SNBT, Pancasila, Biologi</td>
+                        </tr>
+                        <tr>
+                            <td>JUMAT</td>
+                            <td>Sejarah, Geografi, Matematika, Kimia</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Memories -->
+        <section id="memories">
+            <h2 class="section-title">KENANGAN KELAS X-8</h2>
+            <div class="memories-container">
+                <div class="memory-card">
+                    <div class="memory-img">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="memory-content">
+                        <h3>Masa Orientasi</h3>
+                        <p>Kenangan indah saat masa orientasi sekolah, mengenal lingkungan baru dan teman-teman baru.</p>
+                    </div>
+                </div>
+                <div class="memory-card">
+                    <div class="memory-img">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="memory-content">
+                        <h3>Prestasi Kelas</h3>
+                        <p>Berbagai prestasi yang telah diraih oleh kelas X-8 Dynamoss dalam berbagai lomba dan kompetisi.</p>
+                    </div>
+                </div>
+                <div class="memory-card">
+                    <div class="memory-img">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="memory-content">
+                        <h3>Kegiatan Kelas</h3>
+                        <p>Momen kebersamaan dalam berbagai kegiatan kelas yang mempererat tali persaudaraan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="dynamoss-text">THE.XEIGHT DYNAMOSS</div>
+            <div class="footer-quote">
+                "Kelas yang dinamis, penuh energi, dan siap menciptakan prestasi gemilang!"
+            </div>
+            <div class="instagram-handle">
+                <i class="fab fa-instagram"></i>
+                <a href="https://instagram.com/the.xeight_dynamoss" target="_blank">Follow kami di Instagram: @the.xeight_dynamoss</a>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Kelas X-8 Dynamoss - SMA Negeri Jogoroto. Tahun Pelajaran 2025/2026.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll untuk navigasi
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animasi saat scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.padding = '20px 0 15px';
+            } else {
+                header.style.padding = '40px 0 30px';
+            }
+        });
+
+        // Hover effect untuk kartu siswa
+        document.querySelectorAll('.student-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const icon = this.querySelector('.student-photo i');
+                if (icon) {
+                    icon.style.transform = 'scale(1.2)';
+                    icon.style.transition = 'transform 0.3s';
+                }
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                const icon = this.querySelector('.student-photo i');
+                if (icon) {
+                    icon.style.transform = 'scale(1)';
+                }
+            });
+        });
+
+        // Dynamic tahun pelajaran di footer
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearElement = document.querySelector('.copyright');
+            if (yearElement) {
+                const currentYear = new Date().getFullYear();
+                yearElement.innerHTML = yearElement.innerHTML.replace('2025', currentYear);
+            }
+        });
+    </script>
+</body>
+</html>
